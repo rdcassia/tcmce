@@ -4,7 +4,7 @@ import apiTcm from '../../services/apitcm';
 
 import { Container } from './styles';
 
-import Select2 from '../../components/Select2';
+import Select from '../../components/Select';
 
 export default class Main extends Component {
   constructor(props) {
@@ -16,21 +16,22 @@ export default class Main extends Component {
 
   async componentDidMount() {
     const { data } = await apiTcm.get('/municipios');
-    this.setState({ municipios: data });
+
+    const municipios = data.map(({ codigo_municipio, nome_municipio }) => ({
+      value: codigo_municipio,
+      description: nome_municipio,
+    }));
+
+    this.setState({ municipios });
   }
 
   render() {
-    const municipios = this.state.municipios.map(
-      ({ codigo_municipio, nome_municipio }) => ({
-        value: codigo_municipio,
-        description: nome_municipio,
-      })
-    );
+    const { municipios } = this.state;
 
     return (
       <Container>
         <h1>Municipios</h1>
-        <Select2 id="municipios" itens={municipios} />
+        <Select id="municipios" itens={municipios} />
       </Container>
     );
   }

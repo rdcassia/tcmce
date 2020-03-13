@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Select = styled.select.attrs(props => ({
+export const SelectStyled = styled.select.attrs(props => ({
   className: 'form-control',
 }))`
   height: 35px;

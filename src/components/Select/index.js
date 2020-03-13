@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
 
-import { Select } from './styles';
+import { SelectStyled } from './styles';
 
-export default class Select2 extends Component {
+export default class Select extends Component {
   render() {
     const { id, itens } = this.props;
     return (
-      <Select id={id}>
+      <SelectStyled id={id}>
         {itens.map(item => (
           <option key={item.value} value={item.value}>
             {item.description}
           </option>
         ))}
-      </Select>
+      </SelectStyled>
     );
   }
 }
 
-Select2.propTypes = {
+Select.propTypes = {
   id: propTypes.string.isRequired,
   itens: propTypes.array.isRequired,
 };
