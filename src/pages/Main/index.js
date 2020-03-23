@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import apiTcm from '../../services/apitcm';
 
+import Title from '../../components/Title';
+
 import { Container } from './styles';
 
 import Select from '../../components/Select';
@@ -29,10 +31,11 @@ export default class Main extends Component {
     const { municipios } = this.state;
 
     return (
-      <Container>
-        <h1>Municipios</h1>
-        <Select id="municipios" itens={municipios} />
-      </Container>
+      <Title />
+      // <Container>
+      //   <h1>Municipios</h1>
+      //   <Select id="municipios" itens={municipios} />
+      // </Container>
     );
   }
 }

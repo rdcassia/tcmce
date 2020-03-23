@@ -13,5 +13,6 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding: 8px 0px;
   }
 `;
